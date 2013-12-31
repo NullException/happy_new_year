@@ -28,13 +28,12 @@ def has_colours(stream):
 has_colours = has_colours(sys.stdout)
 
 
-def printout(text, colour=WHITE):
+def printout(text="", colour=WHITE):
     if sys.platform.startswith('win'):
         import ctypes
         from ctypes import windll, c_ulong
         windll.Kernel32.GetStdHandle.restype = c_ulong
         h = windll.Kernel32.GetStdHandle(c_ulong(0xfffffff5))
-        # for color in xrange(16):
         windll.Kernel32.SetConsoleTextAttribute(h, colour)
         sys.stdout.write(text.format(colour))
     else:

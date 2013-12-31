@@ -22,7 +22,7 @@ lable_linux = u"""
 ✸░░░░░░▀░░░▀▀▀░▐▀▀▀▌░▀▀▀░▀░░▀░░▀░░░░░░✸
 """
 
-text = """
+text = u"""
 Дорогие друзья! Поздравляю вас с новым 2014 годом!
 Желаю всем вам в наступающем году много новых и интересных задач!
 Чтобы количество начатых проектов равнялось количеству успешных релизов!
@@ -51,7 +51,7 @@ tree_1_linux = u"""          █▓█
 tree_trunk_linux = u"""           ██
            ██"""
 
-star_windows = """
+star_windows = u"""
            *"""
 
 tree_head_windows = u"""           
@@ -82,7 +82,7 @@ if sys.platform.startswith('win'):
   symbol_4_ball_set = "^"
   symbol_4_tree_trunk_change = "8"
 else:
-  lable = u"С Новым Годом!\n"#lable_linux
+  lable = u"С Новым Годом!\n"
   star = star_linux
   tree_head = tree_head_linux
   tree_1 = tree_1_linux
@@ -123,12 +123,6 @@ def set_color_balls_on_tree(tree="", symbol_4_ball_set="", ball_symbol = ""):
   return rows
 
 tree_body = [set_color_balls_on_tree(tree_1, symbol_4_ball_set, ball_symbol) for i in xrange(0,1,1)]
-
-# for i in xrange(0,30,1):
-#   print i
-#   printout(unicode(" "), i)
-
-# sys.stdout.write("\x1b[1;%dm" % (30 + 13) + u" " + "\x1b[0m")
 
 def show_all(star="", tree_head="", tree_body="", lable="", text=""):
   i = 0
